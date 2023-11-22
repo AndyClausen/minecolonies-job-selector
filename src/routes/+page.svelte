@@ -48,7 +48,11 @@
 				selectedSkills.includes(job.secondary)
 		)
 		.sort((a, b) =>
-			selectedSkills.includes(a.primary) && selectedSkills.includes(a.secondary) ? -1 : 1
+			selectedSkills.includes(a.primary) && selectedSkills.includes(a.secondary)
+				? -1
+				: selectedSkills.includes(a.primary) && !selectedSkills.includes(b.primary)
+				  ? -1
+				  : 1
 		);
 </script>
 
